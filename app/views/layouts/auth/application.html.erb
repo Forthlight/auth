@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Auth</title>
-  <%= stylesheet_link_tag    "auth/application", media: "all" %>
-  <%= javascript_include_tag "auth/application" %>
-  <%= csrf_meta_tags %>
+	<title>Auth</title>
+	<%= stylesheet_link_tag    "auth/application", media: "all" %>
+	<%= javascript_include_tag "auth/application" %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<%= render :file => "#{Rails.root}/app/views/shared/_navbar.html.erb" %>
+	<div class="form-wrap">
+		<div class="row-fluid">
+			<div class="span4 hidden-phone"></div>
+			<div class="span4 from-content">
+				<%= yield %>
+			</div>
+			<div class="span4 hidden-phone"></div>
+		</div>
+	</div>
 </body>
 </html>
