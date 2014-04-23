@@ -18,19 +18,24 @@
 
       <div><%= f.label :last_name %><br />
         <%= f.text_field :last_name %></div><br />
-        
-        <div><%= f.label :new_password %><br /> <i>(leave blank if you don't want to change it)</i><br />
-          <%= f.password_field :password, autocomplete: "off" %></div><br />
 
-          <div><%= f.label :confirm_new_password %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off" %></div><br />
+        <div><%= f.label :description %><br />
+          <%= f.text_area :description, :size => "40x10" %></div><br />
 
-            <div><%= f.label :current_password %><br /> <i>(we need your current password to confirm your changes)</i><br />
-              <%= f.password_field :current_password, autocomplete: "off" %></div><br />
+          <div><%= f.label :new_password %><br /> <i>(leave blank if you don't want to change it)</i><br />
+            <%= f.password_field :password, autocomplete: "off" %></div><br />
 
-              <div><%= f.submit "Save", :class=>"mock-btn" %></div>
-              <% end %>
-              <p>or </p>
-              <h3>Cancel my account</h3>
-              <p></p>
-              <%= button_to "Cancel account", registration_path(resource_name), data: { confirm: "Are you sure? This will permanently remove your account and all publications associated with it." }, method: :delete, :class=>"mock-btn" %>
+            <div><%= f.label :confirm_new_password %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off" %></div><br />
+
+              <div><%= f.label :current_password %><br /> <i>(we need your current password to confirm your changes)</i><br />
+                <%= f.password_field :current_password, autocomplete: "off" %></div><br />
+
+
+
+                <div><%= f.submit "Save", :class=>"mock-btn" %></div>
+                <% end %>
+                <p>or </p>
+                <h3>Cancel my account</h3>
+                <p></p>
+                <%= button_to "Cancel account", registration_path(resource_name), data: { confirm: "Are you sure? This will permanently remove your account and all publications associated with it." }, method: :delete, :class=>"mock-btn" %>

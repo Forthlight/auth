@@ -8,14 +8,19 @@
 </head>
 <body>
 	<%= render :file => "#{Rails.root}/app/views/shared/_navbar.html.erb" %>
-	<div class="form-wrap">
-		<div class="row-fluid">
-			<div class="span4 hidden-phone"></div>
-			<div class="span4 from-content">
-				<%= yield %>
+  
+	<div class="foot-wrapper">
+		<div class="form-wrap">
+			<div class="row-fluid">
+				<div class="span4 hidden-phone"></div>
+				<div class="span4 from-content">
+					<%= yield %>
+				</div>
+				<div class="span4 "></div>
 			</div>
-			<div class="span4 hidden-phone"></div>
 		</div>
+		<div class="push hidden-phone"></div>
 	</div>
+	<%= render :file => "#{Rails.root}/app/views/shared/_footer.html.erb" %>
 </body>
 </html>
