@@ -39,6 +39,12 @@
   </div>
 
   <div>
+    <%= f.label :terms %><br />
+    <%= f.check_box(:terms) %>
+    I've read and accepted the <%= link_to "terms and conditions", "/resources/terms_and_conditions_regular.pdf", target: :blank, id: "terms-conditions" %>
+  </div>
+
+  <div>
     <%= f.submit "Sign up", :class=>"mock-btn" %>
   </div>
 <% end %>
