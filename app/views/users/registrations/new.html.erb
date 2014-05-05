@@ -1,46 +1,61 @@
 <h1>Sign up - User</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<div class="frap"><%= devise_error_messages! %>
 
   <div>
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, :class=>"span11" %>
   </div>
+  <br>
+  <br>
 
   <div>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
+    <%= f.label :username %>
+    <%= f.text_field :username, :class=>"span11" %>
   </div>
+  <br>
+  <br>
 
   <div>
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, :class=>"span11" %>
   </div>
+  <br>
+  <br>
 
   <div>
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, :class=>"span11" %>
   </div>
+  <br>
+  <br>
 
   <div>
-    <%= f.label :role %><br />
+    <%= f.label :role %>
     <%= f.select(:role, SimpleRoles.config.valid_roles.map.with_index {|x, i| i = x.capitalize, x}) %>
   </div>
+  <br>
+  <br>
 
   <div>
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "off", :class=>"span11" %>
   </div>
+  <br>
+  <br>
 
   <div>
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"span11" %>
   </div>
+  <br>
+  <br>
 
   <div>
     <%= f.submit "Sign up", :class=>"mock-btn" %>
   </div>
-<% end %>
+  <% end %>
 
-<%= render "users/shared/links" %>
+  <%= render "users/shared/links" %>
+</div>
