@@ -1,74 +1,57 @@
 
-<h1>Edit <%= resource_name.to_s.humanize %></h1>
+<h1>Edit my account</h1>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-<div class="frap"><%= devise_error_messages! %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class:"basic-form" }) do |f| %>
+  <%= devise_error_messages! %>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-  <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
   <div>
     <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, :class=>"span11" %>
+    <%= f.email_field :email, autofocus: true %>
   </div>
-  <br>
-  <br>
 
   <div>
     <%= f.label :username %>
-    <%= f.text_field :username, :class=>"span11" %>
+    <%= f.text_field :username %>
   </div>
-  <br>
-  <br>
 
   <div>
     <%= f.label :first_name %>
-    <%= f.text_field :first_name, :class=>"span11" %>
+    <%= f.text_field :first_name %>
   </div>
-  <br>
-  <br>
 
   <div>
     <%= f.label :last_name %>
-    <%= f.text_field :last_name, :class=>"span11" %>
+    <%= f.text_field :last_name %>
   </div>
-  <br>
-  <br>
 
   <div>
    <%= f.label :description %>
-   <%= f.text_area :description, :class=>"span11"%>
- </div>
+   <%= f.text_area :description, rows: 10, placeholder: "Maximum length is 512 characters" %>
+  </div>
 
+  <div>
+    <%= f.label :new_password %><i>(leave blank if you don't want to change it)</i>
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
 
- <div>
-   <br>
- <br>
-  <%= f.label :new_password %><br> <i>(leave blank if you don't want to change it)</i>
-  <%= f.password_field :password, autocomplete: "off", :class=>"span11" %>
-</div>
-<br>
-<br>
+  <div>
+    <%= f.label :confirm_new_password %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
 
-<div>
-  <%= f.label :confirm_new_password %>
-  <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"span11" %>
-</div>
-<br>
-<br>
+  <div>
+    <%= f.label :current_password %><i>(we need your current password to confirm your changes)</i>
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
 
-<div>
-  <%= f.label :current_password %><br> <i>(we need your current password to confirm your changes)</i><br>
-  <%= f.password_field :current_password, autocomplete: "off", :class=>"span11" %>
-</div>
-<br>
-<br>
-
-
-<div class="actions">
-  <%= f.submit "Save", :class=>"mock-btn" %>
-  <%= button_to "Cancel account", registration_path(resource_name), data: { confirm: "Are you sure? This will permanently remove your account and all publications associated with it." }, method: :delete, :class=>"mock-btn del" %>
-</div>
+  <div class="actions">
+    <%= f.submit "Save", :class=>"mock-btn" %>
+    <%= link_to "Close account", registration_path(resource_name), data: { confirm: "Are you sure? This will permanently remove your account and all publications associated with it." }, method: :delete, :class=>"mock-btn del" %>
+    <br />
+    <i>This will remove your account, your existing content will however remain (you cannot reclaim a closed account)</i>
+  </div>
 <% end %>
-</div>

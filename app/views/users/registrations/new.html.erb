@@ -1,59 +1,44 @@
-<h1>Sign up - User</h1>
+<h1>Forthlight registration</h1>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-<div class="frap"><%= devise_error_messages! %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {class:"basic-form"}) do |f| %>
+  <%= devise_error_messages! %>
 
   <div>
     <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, :class=>"span11" %>
+    <%= f.email_field :email, autofocus: true %>
   </div>
-  <br>
-  <br>
 
   <div>
     <%= f.label :username %>
-    <%= f.text_field :username, :class=>"span11" %>
+    <%= f.text_field :username %>
   </div>
-  <br>
-  <br>
 
   <div>
     <%= f.label :first_name %>
-    <%= f.text_field :first_name, :class=>"span11" %>
+    <%= f.text_field :first_name %>
   </div>
-  <br>
-  <br>
 
   <div>
     <%= f.label :last_name %>
-    <%= f.text_field :last_name, :class=>"span11" %>
+    <%= f.text_field :last_name %>
   </div>
-  <br>
-  <br>
 
   <div>
     <%= f.label :role %>
     <%= f.select(:role, SimpleRoles.config.valid_roles.map.with_index {|x, i| i = x.capitalize, x}) %>
   </div>
-  <br>
-  <br>
 
   <div>
     <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "off", :class=>"span11" %>
+    <%= f.password_field :password, autocomplete: "off" %>
   </div>
-  <br>
-  <br>
 
   <div>
     <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"span11" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-  <br>
-  <br>
 
   <div>
-    <%= f.label :terms %><br />
     <%= f.check_box(:terms) %>
     I've read and accepted the <%= link_to "terms and conditions", "/resources/terms_and_conditions_regular.pdf", target: :blank, id: "terms-conditions" %>
   </div>
@@ -61,7 +46,8 @@
   <div>
     <%= f.submit "Sign up", :class=>"mock-btn" %>
   </div>
-  <% end %>
 
   <%= render "users/shared/links" %>
-</div>
+<% end %>
+
+
