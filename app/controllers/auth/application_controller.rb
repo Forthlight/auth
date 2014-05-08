@@ -2,6 +2,9 @@ module Auth
   class ApplicationController < ActionController::Base
     before_filter :devise_parameter_sanitizer, if: :devise_controller?
 
+    # Include helpers from common domain engine
+    helper CommonDomain::Engine.helpers
+
     protected
 
     def devise_parameter_sanitizer
